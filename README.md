@@ -1,2 +1,2 @@
-# go-stargate-client
-A StarGate client written in Go
+# go-stargate-server
+A StarGate server written in Go
