@@ -91,3 +91,14 @@ func Listen(addr, password string) (*Listener, error) {
 	}()
 	return listener, nil
 }
+
+// Connections returns a copied slice of connections.
+func (l *Listener) Connections() []*Conn {
+	l.mu.RLock()
+	defer l.mu.RUnlock()
+	conns := make([]*Conn, 0, len(l.connections))
+	for conn := range l.connections {
+		conns = append(conns, conn)
+	}
+	return conns
+}
