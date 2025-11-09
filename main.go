@@ -1,19 +1,32 @@
-# go-stargate-server
-A [StarGate](https://github.com/Alemiz112/StarGate) server implementation in Go to be used with Spectrum proxy.
-
-## Example usage
-Most example usages are covered in [main.go](./main.go). But for registering custom packets, you could follow these:
-
-```go
 package main
 
+import (
+	"log/slog"
+	"os"
+	"os/signal"
+	"strconv"
+	"syscall"
+
+	"github.com/alvin0319/go-stargate-client/config"
+	"github.com/alvin0319/go-stargate-client/protocol"
+	"github.com/alvin0319/go-stargate-client/server"
+)
+
+type CustomHandler struct {
+	log *slog.Logger
+}
+
+func (h *CustomHandler) Handle(w *protocol.Wrapper) error {
+	h.log.Info("received packet", "id", w.P.ID(), "response", w.Response, "responseID", w.ResponseID)
+	return nil
+}
+
 func main() {
-    conf, err := config.Read()
+	conf, err := config.Read()
 	if err != nil {
 		panic(err)
 	}
-    protocol.Pool[100] = func() protocol.Packet { return &protocol.CustomPacket{} }
-	slog.SetLogLoggerLevel(slog.LevelInfo)
+	slog.SetLogLoggerLevel(slog.LevelDebug)
 	log := slog.Default()
 	log.Info("starting stargate server", "host", conf.Host, "port", conf.Port)
 	l, err := server.Listen(conf.Host+":"+strconv.Itoa(conf.Port), conf.Password)
@@ -38,4 +51,3 @@ func main() {
 		log.Info("accepted session", "addr", c.RemoteAddr())
 	}
 }
-```
