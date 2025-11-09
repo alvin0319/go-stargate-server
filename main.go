@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"syscall"
 
-	"github.com/alvin0319/go-stargate-client/config"
-	"github.com/alvin0319/go-stargate-client/protocol"
-	"github.com/alvin0319/go-stargate-client/server"
+	"github.com/alvin0319/go-stargate-server/config"
+	"github.com/alvin0319/go-stargate-server/protocol"
+	"github.com/alvin0319/go-stargate-server/server"
 )
 
 type CustomHandler struct {

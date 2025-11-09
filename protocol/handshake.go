@@ -3,7 +3,7 @@ package protocol
 import (
 	"io"
 
-	"github.com/alvin0319/go-stargate-client/protocol/types"
+	"github.com/alvin0319/go-stargate-server/protocol/types"
 )
 
 // Handshake ...

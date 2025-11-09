@@ -3,7 +3,7 @@ package protocol
 import (
 	"io"
 
-	"github.com/alvin0319/go-stargate-client/util"
+	"github.com/alvin0319/go-stargate-server/util"
 )
 
 // ServerHandshake is a packet sent by server that indicates whether handshake process succeed or not.

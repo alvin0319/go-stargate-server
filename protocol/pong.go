@@ -3,7 +3,7 @@ package protocol
 import (
 	"io"
 
-	"github.com/alvin0319/go-stargate-client/util"
+	"github.com/alvin0319/go-stargate-server/util"
 )
 
 // Pong is a packet that responds to Ping.

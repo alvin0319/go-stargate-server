@@ -1,4 +1,4 @@
-module github.com/alvin0319/go-stargate-client
+module github.com/alvin0319/go-stargate-server
 
 go 1.24.5
 

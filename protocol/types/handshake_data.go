@@ -3,7 +3,7 @@ package types
 import (
 	"io"
 
-	"github.com/alvin0319/go-stargate-client/util"
+	"github.com/alvin0319/go-stargate-server/util"
 )
 
 const (

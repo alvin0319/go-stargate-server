@@ -10,8 +10,8 @@ import (
 	"net"
 	"time"
 
-	"github.com/alvin0319/go-stargate-client/protocol"
-	"github.com/alvin0319/go-stargate-client/protocol/types"
+	"github.com/alvin0319/go-stargate-server/protocol"
+	"github.com/alvin0319/go-stargate-server/protocol/types"
 )
 
 const (

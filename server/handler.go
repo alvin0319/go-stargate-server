@@ -1,6 +1,6 @@
 package server
 
-import "github.com/alvin0319/go-stargate-client/protocol"
+import "github.com/alvin0319/go-stargate-server/protocol"
 
 type Handler interface {
 	// Handle handles the wrapper packet.
